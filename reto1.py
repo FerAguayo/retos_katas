@@ -21,11 +21,35 @@ def add_student():
     adding = "s" 
     while adding == "s" or adding == "S":
         student = input("Ingresa el nombre del estudiante: ")
-    
-        n1 = float (input ("Ingresa la primera nota: "))
-        n2 = float (input ("Ingresa la segunda nota: "))
-        n3 = float (input ("Ingresa la tercera nota: "))
-    
+        while True:
+            try:
+                n1 = float (input ("Ingresa la primera nota: "))
+                if 0 <= n1 <= 10:
+                    break
+                else:
+                    print("Debes ingresar una nota con valores entre 0 y 10")
+            except ValueError:
+                print ("Debes introducir números")
+        while True:
+            try:
+                n2 = float (input ("Ingresa la primera nota: "))
+                if 0 <= n2 <= 10:
+                    break
+                else:
+                    print("Debes ingresar una nota con valores entre 0 y 10")
+            except ValueError:
+                print ("Debes introducir números")
+
+        while True:
+            try:
+                n3 = float (input ("Ingresa la primera nota: "))
+                if 0 <= n3 <= 10:
+                    break
+                else:
+                    print("Debes ingresar una nota con valores entre 0 y 10")
+            except ValueError:
+                print ("Debes introducir números")
+
         grades = [n1,n2,n3]
 
         new_student = {"name": student,"grades":grades}
@@ -84,7 +108,8 @@ def remove_student():
 
 def menu():
     while True:
-        print("Alumnado \n1) Ingresar alumno\n2) Borra alumno\n3) Mostrar estudiantes aprobados\n4) Buscar estudiante y su promedio\n5) Listado de todos los estudiantes\n6) Salir de la aplicación")
+
+        print(">>>||Use las teclas del 1 al 6 para seleccionar su opción||<<<<\n1) Ingresar alumno\n2) Borra alumno\n3) Mostrar estudiantes aprobados\n4) Buscar estudiante y su promedio\n5) Listado de todos los estudiantes\n6) Salir de la aplicación")
 
         choose = input ("Qué desea hacer?: ")
 
